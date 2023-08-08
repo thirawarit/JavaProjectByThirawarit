@@ -15,9 +15,6 @@ public class RentalProperty{
         this.rental = rental;
     }
 
-    public RentalProperty() {
-    }
-
     // instance methods.
     public void calculateYield(int inPeriodOfMonths, int allFixCosts) {
         this.numberOfMonth = inPeriodOfMonths;
