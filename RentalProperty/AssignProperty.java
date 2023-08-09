@@ -5,9 +5,11 @@ public class AssignProperty extends RentalProperty {
 
     // constructor method.
     public AssignProperty() {
-        super();
-        this.propertyOne = new RentalProperty("AstonAsoke", 3500000, 30000);
-        this.propertyTwo = new RentalProperty("Centric Tiwanon", 4000000, 8500);
+        // Call a parent class with super(...) constructor explicitly; 
+        /* set "a matching parent constructor." */
+        super("", 0, 0);
+        this.propertyOne = new RentalProperty("AstonEsoke", 3500000, 30000);
+        this.propertyTwo = new RentalProperty("Centric Tiwananii", 4000000, 8500);
 
     }
 

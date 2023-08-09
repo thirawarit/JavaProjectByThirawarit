@@ -1,14 +1,20 @@
 public class RentalProperty{
     // instance variables.
-    private String nameProperty;
-    private double price;
-    private double rental;
+    public String nameProperty;
+    public double price;
+    public double rental;
     private int numberOfMonth;
     private double otherCosts;
     private double grossRentalYield;
     private double netRentalYield;
 
     // constructor method.
+
+    /* The super constructor */
+    /*  MUST be the first statement inside the constructor. */
+    /* Implicit way to call in children classes invisibly. */
+    public RentalProperty() { }
+
     public RentalProperty(String nameProperty, double priceProperty, double rental) {
         this.nameProperty = nameProperty;
         this.price = priceProperty;
