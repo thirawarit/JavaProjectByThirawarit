@@ -1,8 +1,8 @@
 public class RentalProperty{
     // instance variables.
-    public String nameProperty;
-    public double price;
-    public double rental;
+    private String nameProperty;
+    private double price;
+    private double rental;
     private int numberOfMonth;
     private double otherCosts;
     private double grossRentalYield;
@@ -17,48 +17,48 @@ public class RentalProperty{
 
     public RentalProperty(String nameProperty, double priceProperty, double rental) {
         this.nameProperty = nameProperty;
-        this.price = priceProperty;
+        price = priceProperty;
         this.rental = rental;
     }
 
     // instance methods.
     public void calculateYield(int inPeriodOfMonths, int allFixCosts) {
-        this.numberOfMonth = inPeriodOfMonths;
-        this.otherCosts = allFixCosts;
-        this.grossRentalYield = calculateGrossRentalYield();
-        this.netRentalYield = calculateNetRentalYield();
+        numberOfMonth = inPeriodOfMonths;
+        otherCosts = allFixCosts;
+        grossRentalYield = calculateGrossRentalYield();
+        netRentalYield = calculateNetRentalYield();
     }
 
     private double calculateGrossRentalYield() {
-        return (this.rental*this.numberOfMonth / this.price) * 100;
+        return (rental*numberOfMonth / price) * 100;
     }
 
     private double calculateNetRentalYield() {
-        return ((this.rental*this.numberOfMonth - this.otherCosts*12) / this.price) * 100;
+        return ((rental*numberOfMonth - otherCosts*12) / price) * 100;
     }
 
     public String getNameProperty() {
-        return this.nameProperty;
+        return nameProperty;
     }
 
     public double getPriceProperty() {
-        return this.price;
+        return price;
     }
 
     public double getRental() {
-        return this.rental;
+        return rental;
     }
 
     public void getInformation() {
-        System.out.printf("The name of property is \"%s\". %s",this.getNameProperty(), "\n");
-        System.out.printf("Its price is %,3.2f BAHT. %s", this.getPriceProperty(),"\n");
-        System.out.printf("Ratal for a renter is %,3.2f BAHT/month. %s", this.getRental(), "\n");
-        if (this.grossRentalYield != 0 && this.netRentalYield != 0) {
+        System.out.printf("The name of property is \"%s\". %s", getNameProperty(), "\n");
+        System.out.printf("Its price is %,3.2f BAHT. %s", getPriceProperty(),"\n");
+        System.out.printf("Ratal for a renter is %,3.2f BAHT/month. %s", getRental(), "\n");
+        if (grossRentalYield != 0 && netRentalYield != 0) {
             System.out.print("   Calculating yield... \n");
-            System.out.printf("A renter live over a period of %d months \n", this.numberOfMonth);
-            System.out.printf("Fixed costs you have to pay is %,3.2f BAHT \n", this.otherCosts);
-            System.out.print("Gross Rental Yield = " + this.grossRentalYield + "%" + " \n");
-            System.out.println("Net Rental Yield = " + this.netRentalYield + "%");
+            System.out.printf("A renter live over a period of %d months \n", numberOfMonth);
+            System.out.printf("Fixed costs you have to pay is %,3.2f BAHT \n", otherCosts);
+            System.out.print("Gross Rental Yield = " + grossRentalYield + "%" + " \n");
+            System.out.println("Net Rental Yield = " + netRentalYield + "%");
         }
     }
 
